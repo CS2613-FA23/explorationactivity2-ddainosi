@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>random name generator</title>
+        <link rel="stylesheet" href="./resources/css/index.css">
+    </head>
+    <body>
+        <!-- Nav bar -->
+        <nav class="navbar">
+            <span class="navbar-text">The Lighthouse Bookstore</span>
+        </nav>
+       <!-- Banner section -->
+       <div class="banner" onsubmit="return false">
+        <h1 class="bold">Lighthouse Bookstore Giveaway Name Generator</h1>
+        <img id="logo" src="./resources/images/lighthouse logo.png" alt="">
+        <p class="bold" id="gen-text">Congrats to the winners!</p>
+        <button onclick="generateText()" type="submit">Click me!</button>
+       </div>
+
+       <div class="generator-section">
+        <span class="bold" id="input-names-text"><i>Input a list of names:</i> </span>
+        <div class="giveaway-stuff">
+            <p class="bold">One name per line</p>
+            <form class="calculator justify-content-center align-items-center" style="width: 100%" onsubmit="return false">
+                <div class="generate-div" style="width: 305px; float: left;">
+                    <textarea id="textarea-names" placeholder="E.g.
+                    Mary Brown
+                    Jim Thornton
+                    Christopher Evans
+                    William Afton
+                    Mike Schmidt"></textarea>
+                    <button onclick="generateWinner()" type="submit" id="generate-button">Generate</button>
+                </div>
+                <div id="output-div" style="margin-left: 50%">
+                    <!--<h1 id="output">Winner name here!</h1>-->
+                    <h1 class="winner" id="output">
+                        <span class="text-wrapper">
+                            <span class="line line1"></span>
+                            <!--<span id="winner-name">
+                                <span class="letters">Winner name here!</span>
+                            </span>-->
+                            <span class="letters">(Winner name)</span>
+                        </span>
+                    </h1>
+                </div>
+            </form>
+        </div>
+       </div>
+       <!--/node_modules/animejs/lib/anime.min.js  src="https://cdnjs.cloudfare.com/ajax/libs/animejs/2.0.2/anime.min.js"-->
+       <script src="https://cdnjs.cloudfare.com/ajax/libs/animejs/2.0.2/anime.min.js">
+        //
+       </script>
+       <script>
+            function generateWinner(){
+                const names = document.getElementById("textarea-names").value.split("\n");
+                const randomNum = Math.floor(Math.random() * names.length)
+                document.getElementById("output").innerHTML = names[randomNum];
+                animation.play();
+            }
+
+            function generateText(){
+                const arr = ['Congratulations!', 'Yay!!', 'You Won!'];
+                const randomNum = Math.floor(Math.random() * arr.length)
+                document.getElementById("gen-text").innerHTML = arr[randomNum];
+            }
+
+            let textWrapper = document.querySelector(".winner .letters");
+            textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+            let animation = anime.timeline({loop: true})
+                .add({
+                    targets: '.winner .line',
+                    scaleY: [0,1],
+                    opacity: [0.5,1],
+                    easing: "easeOutExpo",
+                    duration: 700
+                })
+                .add({
+                    targets: '.winner .line',
+                    translateX: [0, document.querySelector('.winner .letters').getBoundingClientRect().width + 10],
+                    easing: "easeOutExpo",
+                    duration: 700,
+                    delay: 100
+                }).add({
+                    targets: '.winner .letter',
+                    opacity: [0,1],
+                    easing: "easeOutExpo",
+                    duration: 600,
+                    offset: '-=775',
+                    delay: (el, i) => 34 * (i+1)
+                });
+       </script>
+    </body>
+</html>
