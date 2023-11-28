@@ -19,16 +19,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.navbar li{
-    display: inline-block;
-    padding: 0 20px;
-}
-
-.navbar a{
-    text-decoration: none;
-    color: #ffffff;
-}
-
 .banner{
     background-color: #a4332b;
     color: #ffffff;
@@ -50,16 +40,6 @@
 #input-names-text{
     color: #a4332b;
     font-size: 50px;
-}
-
-.avatar{
-    background-image: url(../images/frery\ faber.webp);
-    background-size: cover;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 form.calculator{
@@ -108,40 +88,11 @@ button#generate-button{
     padding-bottom: 0.15em;
 }
 
-.winner .line{
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 3px;
-    background-color: #ffffff;
-    transform-origin: 0 50%;
-}
-
-.winner .line1{
-    top: 0;
-    left: 0;
-}
-
-.winner.letter{
-    display: inline-block;
-    line-height: 1em;
-}
-
 .letters{
-    /*font-family: inherit;*/
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .bold{
     font-weight: 800;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-a.blue{
-    color: #a4332b;
-}
-
-#winner-name{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
