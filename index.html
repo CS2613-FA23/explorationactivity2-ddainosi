@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>random name generator</title>
         <link rel="stylesheet" href="./resources/css/index.css">
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <!-- Nav bar -->
@@ -13,7 +15,7 @@
         </nav>
        <!-- Banner section -->
        <div class="banner" onsubmit="return false">
-        <h1 class="bold">Lighthouse Bookstore Giveaway Name Generator</h1>
+        <h1 class="bold" id="nav-title">Lighthouse Bookstore Giveaway Name Generator</h1>
         <img id="logo" src="./resources/images/lighthouse logo.png" alt="">
         <p class="bold" id="gen-text">Congrats to the winners!</p>
         <button onclick="generateText()" type="submit">Click me!</button>
@@ -31,35 +33,65 @@
                     Christopher Evans
                     William Afton
                     Mike Schmidt"></textarea>
-                    <button onclick="generateWinner()" type="submit" id="generate-button">Generate</button>
+                    <button type="submit" id="generate-button">Generate</button>
                 </div>
                 <div id="output-div" style="margin-left: 50%">
-                    <!--<h1 id="output">Winner name here!</h1>-->
+                    <!-- <h1 id="output">Winner name here!</h1> -->
                     <h1 class="winner" id="output">
                         <span class="text-wrapper">
-                            <span class="line line1"></span>
-                            <!--<span id="winner-name">
-                                <span class="letters">Winner name here!</span>
-                            </span>-->
                             <span class="letters">(Winner name)</span>
                         </span>
                     </h1>
+                    <!-- <h1 class="letters">(Winner name)</h1> -->
                 </div>
             </form>
         </div>
        </div>
        <script>
-            function generateWinner(){
+            /*function generateWinner(){
                 const names = document.getElementById("textarea-names").value.split("\n");
                 const randomNum = Math.floor(Math.random() * names.length)
                 document.getElementById("output").innerHTML = names[randomNum];
-                animation.play();
+                //$("span.letters").fadeIn();
             }
 
+            $("button#generate-button").click(function(){
+                const names = document.getElementById("textarea-names").value.split("\n");
+                const randomNum = Math.floor(Math.random() * names.length)
+                document.getElementById("output").innerHTML = names[randomNum];
+                $("span.letters").fadeIn();
+            });*/
+
+            $(document).ready(function(){
+                $("h1#nav-title").fadeOut(5000);
+                $("h1#nav-title").fadeIn(5000);
+
+                $("button#generate-button").click(function(){
+                    const names = document.getElementById("textarea-names").value.split("\n");
+                    const randomNum = Math.floor(Math.random() * names.length)
+                    $("span.letters").html(names[randomNum]);
+                    $("span.letters").animate({
+                        fontSize: "3rem",
+                        fontFamily: "Verdana, Geneva, Tahoma, sans-serif",
+                    }, 1000, function(){$(this).removeAttr('style');} );
+                });
+            });
+
+            $("button#generate-button").mouseover(function(){
+                $("button#generate-button").css("background-color", "#464E66");
+            });
+
+            $("button#generate-button").mouseout(function(){
+                $("button#generate-button").css("background-color", "#515a77");
+            });
+
             function generateText(){
-                const arr = ['Congratulations!', 'Yay!!', 'You Won!'];
-                const randomNum = Math.floor(Math.random() * arr.length)
-                document.getElementById("gen-text").innerHTML = arr[randomNum];
+                const arr = ['Congratulations!', 'Yay!!', 'You Won!', 'Thank You!'];
+                const colours = ['black', 'white', 'yellow', 'blue', 'orange', 'purple', 'pink'];
+                const randomNum1 = Math.floor(Math.random() * arr.length)
+                const randomNum2 = Math.floor(Math.random() * colours.length)
+                document.getElementById("gen-text").innerHTML = arr[randomNum1];
+                $("p#gen-text").css("color", colours[randomNum2]);
             }
        </script>
     </body>
