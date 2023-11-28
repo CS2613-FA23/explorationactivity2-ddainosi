@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>random name generator</title>
+        <title>Random Name Generator</title>
         <link rel="stylesheet" href="./resources/css/index.css">
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
-        <!-- Nav bar -->
+        <!-- Navbar section -->
         <nav class="navbar">
             <span class="navbar-text">The Lighthouse Bookstore</span>
         </nav>
@@ -20,7 +20,7 @@
         <p class="bold" id="gen-text">Congrats to the winners!</p>
         <button onclick="generateText()" type="submit">Click me!</button>
        </div>
-
+       <!-- Generate section -->
        <div class="generator-section">
         <span class="bold" id="input-names-text"><i>Input a list of names:</i> </span>
         <div class="giveaway-stuff">
@@ -45,6 +45,7 @@
             </form>
         </div>
        </div>
+       <!-- Code section -->
        <script>
             $(document).ready(function(){
                 $("h1#nav-title").fadeOut(5000);
@@ -72,38 +73,38 @@
                         width: "475px",
                     }, 1000);
                 });
-            });
 
-            $("button#generate-button").mouseover(function(){
-                $("button#generate-button").css("background-color", "#464E66");
-            });
+                $("button#generate-button").mouseover(function(){
+                    $("button#generate-button").css("background-color", "#464E66");
+                });
 
-            $("button#generate-button").mouseout(function(){
-                $("button#generate-button").css("background-color", "#515a77");
-            });
+                $("button#generate-button").mouseout(function(){
+                    $("button#generate-button").css("background-color", "#515a77");
+                });
 
-            $("p#one-name").mouseover(function(){
-                $("p#one-name").html("One name per line, please!");
-            });
+                $("p#one-name").mouseover(function(){
+                    $("p#one-name").html("One name per line, please!");
+                });
 
-            $("p#one-name").mouseout(function(){
-                $("p#one-name").html("One name per line");
-            });
+                $("p#one-name").mouseout(function(){
+                    $("p#one-name").html("One name per line");
+                });
 
-            $("span.letters").mouseover(function(){
-                $("span.letters").css("color", "#a4332b");
-            });
+                $("span.letters").mouseover(function(){
+                    $("span.letters").css("color", "#a4332b");
+                });
 
-            $("span.letters").mouseout(function(){
-                $("span.letters").css("color", "black");
-            });
+                $("span.letters").mouseout(function(){
+                    $("span.letters").css("color", "black");
+                });
 
-            $("span.navbar-text").mouseover(function(){
-                $("span.navbar-text").slideUp(1000);
-            });
+                $("span.navbar-text").mouseover(function(){
+                    $("span.navbar-text").slideUp(1000);
+                });
 
-            $("span.navbar-text").mouseout(function(){
-                $("span.navbar-text").slideDown(1000);
+                $("span.navbar-text").mouseout(function(){
+                    $("span.navbar-text").slideDown(1000);
+                });
             });
 
             function generateText(){
