@@ -15,7 +15,7 @@
         </nav>
        <!-- Banner section -->
        <div class="banner" onsubmit="return false">
-        <h1 class="bold" id="nav-title">Lighthouse Bookstore Giveaway Name Generator</h1>
+        <h1 class="bold" id="nav-title">The Lighthouse Bookstore Giveaway Name Generator</h1>
         <img id="logo" src="./resources/images/lighthouse logo.png" alt="">
         <p class="bold" id="gen-text">Congrats to the winners!</p>
         <button onclick="generateText()" type="submit">Click me!</button>
@@ -24,7 +24,7 @@
        <div class="generator-section">
         <span class="bold" id="input-names-text"><i>Input a list of names:</i> </span>
         <div class="giveaway-stuff">
-            <p class="bold">One name per line</p>
+            <p class="bold" id="one-name">One name per line</p>
             <form class="calculator justify-content-center align-items-center" style="width: 100%" onsubmit="return false">
                 <div class="generate-div" style="width: 305px; float: left;">
                     <textarea id="textarea-names" placeholder="E.g.
@@ -83,6 +83,14 @@
 
             $("button#generate-button").mouseout(function(){
                 $("button#generate-button").css("background-color", "#515a77");
+            });
+
+            $("p#one-name").mouseover(function(){
+                $("p#one-name").html("One name per line, please!");
+            });
+
+            $("p#one-name").mouseout(function(){
+                $("p#one-name").html("One name per line");
             });
 
             function generateText(){
