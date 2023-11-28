@@ -30,7 +30,7 @@
                     <textarea id="textarea-names" placeholder="E.g.
                     Mary Brown
                     Jim Thornton
-                    Christopher Evans
+                    Freddy Fazbear
                     William Afton
                     Mike Schmidt"></textarea>
                     <button type="submit" id="generate-button">Generate</button>
@@ -68,7 +68,7 @@
 
                 $("button#generate-button").click(function(){
                     const names = document.getElementById("textarea-names").value.split("\n");
-                    const randomNum = Math.floor(Math.random() * names.length)
+                    const randomNum = Math.floor(Math.random() * names.length);
                     $("span.letters").html(names[randomNum]);
                     $("span.letters").animate({
                         fontSize: "3rem",
@@ -93,13 +93,34 @@
                 $("p#one-name").html("One name per line");
             });
 
+            $("span.letters").mouseover(function(){
+                $("span.letters").css("color", "#a4332b");
+            });
+
+            $("span.letters").mouseout(function(){
+                $("span.letters").css("color", "black");
+            });
+
+            $("span.navbar-text").mouseover(function(){
+                $("span.navbar-text").slideUp(3000);
+            });
+
+            $("span.navbar-text").mouseout(function(){
+                $("span.navbar-text").slideDown(3000);
+            });
+
             function generateText(){
-                const arr = ['Congratulations!', 'Yay!!', 'You Won!', 'Thank You!'];
-                const colours = ['black', 'white', 'yellow', 'blue', 'orange', 'purple', 'pink'];
-                const randomNum1 = Math.floor(Math.random() * arr.length)
-                const randomNum2 = Math.floor(Math.random() * colours.length)
+                const arr = ['Congratulations!', 'Yay!!', 'You Won!', 'How Amazing!', 'Have a Nice Day!'];
+                const colours = ['black', 'white', 'yellow', 'blue', 'orange', 'purple', 'pink', 'green', '#515a77'];
+                const randomNum1 = Math.floor(Math.random() * arr.length);
+                const randomNum2 = Math.floor(Math.random() * colours.length);
                 document.getElementById("gen-text").innerHTML = arr[randomNum1];
                 $("p#gen-text").css("color", colours[randomNum2]);
+                $("nav.navbar").css("background-color", colours[randomNum2]);
+                if(colours[randomNum2] == 'white')
+                    $("span.navbar-text").css("color", 'black');
+                else
+                    $("span.navbar-text").css("color", 'white');
             }
        </script>
     </body>
