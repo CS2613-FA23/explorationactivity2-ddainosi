@@ -36,32 +36,16 @@
                     <button type="submit" id="generate-button">Generate</button>
                 </div>
                 <div id="output-div" style="margin-left: 50%">
-                    <!-- <h1 id="output">Winner name here!</h1> -->
                     <h1 class="winner" id="output">
                         <span class="text-wrapper">
                             <span class="letters">(Winner name)</span>
                         </span>
                     </h1>
-                    <!-- <h1 class="letters">(Winner name)</h1> -->
                 </div>
             </form>
         </div>
        </div>
        <script>
-            /*function generateWinner(){
-                const names = document.getElementById("textarea-names").value.split("\n");
-                const randomNum = Math.floor(Math.random() * names.length)
-                document.getElementById("output").innerHTML = names[randomNum];
-                //$("span.letters").fadeIn();
-            }
-
-            $("button#generate-button").click(function(){
-                const names = document.getElementById("textarea-names").value.split("\n");
-                const randomNum = Math.floor(Math.random() * names.length)
-                document.getElementById("output").innerHTML = names[randomNum];
-                $("span.letters").fadeIn();
-            });*/
-
             $(document).ready(function(){
                 $("h1#nav-title").fadeOut(5000);
                 $("h1#nav-title").fadeIn(5000);
@@ -74,6 +58,19 @@
                         fontSize: "3rem",
                         fontFamily: "Verdana, Geneva, Tahoma, sans-serif",
                     }, 1000, function(){$(this).removeAttr('style');} );
+                });
+
+                $("img#logo").mouseover(function(){
+                    $("img#logo").animate({
+                        height: "200px",
+                        width: "530px",
+                    }, 1000);
+                });
+                $("img#logo").mouseout(function(){
+                    $("img#logo").animate({
+                        height: "175px",
+                        width: "475px",
+                    }, 1000);
                 });
             });
 
@@ -102,11 +99,11 @@
             });
 
             $("span.navbar-text").mouseover(function(){
-                $("span.navbar-text").slideUp(3000);
+                $("span.navbar-text").slideUp(1000);
             });
 
             $("span.navbar-text").mouseout(function(){
-                $("span.navbar-text").slideDown(3000);
+                $("span.navbar-text").slideDown(1000);
             });
 
             function generateText(){
