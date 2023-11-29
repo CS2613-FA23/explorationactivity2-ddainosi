@@ -6,25 +6,25 @@ jQuery was first developed in 2005 and released in 2006 by John Resig, an expert
 
 ### How is it used/Functionalities (From my Program)
 **Modifying DOM Elements**
-- The `html()` method changes the inner html text of an element
+- The **html()** method changes the inner html text of an element
     - `%("span.letters").html(names[randomNum]);`
         - E.g. `<span class="letters">(Winner name)</span>` --> `<span class="letters"><Randomly generated name></span>`
-- The `css()` method visually changes an element
+- The **css()** method visually changes an element
     - `$("span.letters").css("color", "black");` changes the text colour of the _span.letters_ element to black
-- The `removeAttr()` method removes the specified attribute from a specified html tag
+- The **removeAttr()** method removes the specified attribute from a specified html tag
     - `$(this).removeAttr('style');` removes the style attribute from the _span.letters_ tag, returning the element back to its original state.
 
 
 **Animations**
-- The `fadeIn()` method makes the specified element fade in for a specified duration of seconds (in milliseconds)
+- The **fadeIn()** method makes the specified element fade in for a specified duration of seconds (in milliseconds)
     - `$("h1#nav-title").fadeIn(5000);` makes the text on the navbar fade in for a duration of 5 seconds
-- The `fadeOut()` method makes the specified element fade out for a specified duration of seconds (in milliseconds)
+- The **fadeOut()** method makes the specified element fade out for a specified duration of seconds (in milliseconds)
     - `$("h1#nav-title").fadeOut(5000);` makes the text on the navbar fade out for a duration of 5 seconds
-- The `slideUp()` method makes the specified element slide up for a specified duration of seconds (in milliseconds)
+- The **slideUp()** method makes the specified element slide up for a specified duration of seconds (in milliseconds)
     - `$("span.navbar-text").slideUp(1000);` slides the text in the navbar up for 1 second
-- The `slideDown()` method makes the specified element slide down for a specified duration of seconds (in milliseconds)
+- The **slideDown()** method makes the specified element slide down for a specified duration of seconds (in milliseconds)
     - `$("span.navbar-text").slideDown(1000);` slides the text in the navbar down for 1 second
-- The `animate()` method runs a custom animation on the specified element
+- The **animate()** method runs a custom animation on the specified element
     - The section of code below makes the logo grow to the specified height and width for 1 second:
     ```javascript
     $("img#logo").animate({
@@ -32,14 +32,14 @@ jQuery was first developed in 2005 and released in 2006 by John Resig, an expert
         width: "530px",
     }, 1000);
     ```
-- The `mouseover()` method executes the code passed as a parameter when the mouse is hovering over the specified element
+- The **mouseover()** method executes the code passed as a parameter when the mouse is hovering over the specified element
     - The section of code below changes the generated name to the specified colour when the mouse is hovering over the element:
     ```javascript
     $("span.letters").mouseover(function(){
         $("span.letters").css("color", "#a4332b");
     });
     ```
-- The `mouseout()` method executes the code passed as a parameter when the mouse is **not** hovering over the specified element
+- The **mouseout()** method executes the code passed as a parameter when the mouse is **not** hovering over the specified element
     - The section of code below changes the generated name to the colour black when the mouse is **not** hovering over the element:
     ```javascript
     $("span.letters").mouseout(function(){
@@ -48,8 +48,8 @@ jQuery was first developed in 2005 and released in 2006 by John Resig, an expert
     ```
 
 **Other**
-- The `ready()` method ensures that the page's DOM is safe to modify.
-- The `click()` method executes the code passed as a parameter after the specified element is clicked.
+- The **ready()** method ensures that the page's DOM is safe to modify.
+- The **click()** method executes the code passed as a parameter after the specified element is clicked.
     - The section of code below chooses a random name from the textarea after the **Generate** button is clicked and plays an animation that increases the size of the text:
     ```javascript
     $("button#generate-button").click(function(){
