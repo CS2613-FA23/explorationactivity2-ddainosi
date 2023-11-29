@@ -23,6 +23,7 @@ Try clicking the Click Me! Button:
 Try inputting a list of names and click the **Generate** button:
 - The **Generate** button changes to a darker shade of the blue when the mouse hovers over the element
 - The winner’s name plays a small animation
+
 There are some other features hidden in the website, can you find them? Hover your mouse over certain elements and find out!
 
 Example:
