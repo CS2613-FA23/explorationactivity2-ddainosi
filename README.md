@@ -25,5 +25,9 @@ Try inputting a list of names and click the Generate button:
 - The winner’s name plays a small animation
 There are some other features hidden in the website, can you find them? Hover your mouse over certain elements and find out!
 Example:
-![Code](/media/no_hover.png) --> if mouse is `not` hovering over the `Generate` button
-![Code](/media/hover.png) --> if mouse `is` hovering over the `Generate` button
+
+
+![Code](/media/no_hover.png)
+- If mouse is `not` hovering over the `Generate` button
+![Code](/media/hover.png) 
+- If mouse `is` hovering over the `Generate` button
