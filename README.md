@@ -20,15 +20,15 @@ At my work, giveaways are held from time-to-time. The purpose of this program wa
 ### What would be some sample input/output?
 Try clicking the Click Me! Button:
 - The message will change to a select number of phrases and the colour will change; both at random.
-Try inputting a list of names and click the Generate button:
-- The generate button changes to a darker shade of the blue when the mouse hovers over the element
+Try inputting a list of names and click the **Generate** button:
+- The **Generate** button changes to a darker shade of the blue when the mouse hovers over the element
 - The winner’s name plays a small animation
 There are some other features hidden in the website, can you find them? Hover your mouse over certain elements and find out!
 
 Example:
 
 ![Code](/media/no_hover.png)
-If mouse is `not` hovering over the `Generate` button
+If mouse is _not_ hovering over the **Generate** button
 
 ![Code](/media/hover.png) 
-If mouse `is` hovering over the `Generate` button
+If mouse _is_ hovering over the **Generate** button
