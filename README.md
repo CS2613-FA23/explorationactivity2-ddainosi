@@ -28,6 +28,7 @@ There are some other features hidden in the website, can you find them? Hover yo
 Example:
 
 ![Code](/media/no_hover.png)
-- If mouse is `not` hovering over the `Generate` button
+If mouse is `not` hovering over the `Generate` button
+
 ![Code](/media/hover.png) 
-- If mouse `is` hovering over the `Generate` button
+If mouse `is` hovering over the `Generate` button
