@@ -12,7 +12,10 @@ Follow the listed steps below:
   cd Downloads/explorationactivity2-ddainosi
   npm install jquery
   ```
+  - _If asked, select **JavaScript**_
 - Click on index.html in the explorationactivity2-ddainosi folder on **File Explorer** or **Finder**
+
+![Code](/media/index.png)
 
 ### What purpose does your program serve?
 At my work, giveaways are held from time-to-time. The purpose of this program was to make picking a winner easier and for it to be specific to the business. 

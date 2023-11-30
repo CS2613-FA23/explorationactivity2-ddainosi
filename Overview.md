@@ -49,6 +49,24 @@ jQuery was first developed in 2005 and released in 2006 by John Resig, an expert
 
 **Other**
 - The **ready()** method ensures that the page's DOM is safe to modify.
+    - The section of code below ensures the page's DOM is safe to manipulate before executing the code inside the **ready()** function:
+    ```javascript
+    $(document).ready(function(){
+        $("h1#nav-title").fadeOut(5000);
+        $("h1#nav-title").fadeIn(5000);
+
+        $("button#generate-button").click(function(){
+            const names = document.getElementById("textarea-names").value.split("\n");
+            const randomNum = Math.floor(Math.random() * names.length);
+            $("span.letters").html(names[randomNum]);
+            $("span.letters").animate({
+                fontSize: "3rem",
+                fontFamily: "Verdana, Geneva, Tahoma, sans-serif",
+            }, 1000, function(){$(this).removeAttr('style');} );
+        });
+        //omitted some code for example
+    });
+    ```
 - The **click()** method executes the code passed as a parameter after the specified element is clicked.
     - The section of code below chooses a random name from the textarea after the **Generate** button is clicked and plays an animation that increases the size of the text:
     ```javascript
